@@ -25,7 +25,7 @@ RUN apt-get update -qq \
 
 USER neuro
 
-RUN conda install -y -q --name python=2.7 neuro bokeh \
+RUN conda install -y -q --name neuro python=2.7 bokeh \
                                      holoviews \
                                      plotly \
                                      dipy \
