@@ -2,15 +2,15 @@
 # Run the container with the following command:
 #   docker run -it --rm -p 8888:8888 miykael/workshop_cambridge
 
-# FROM miykael/nipype_tutorial:latest
-FROM scratch
+FROM miykael/nipype_tutorial:latest
+#FROM scratch
 ARG DEBIAN_FRONTEND=noninteractive
 
 #--------------------------------------
 # Update system applications for PyMVPA
 #--------------------------------------
 
-#USER root
+USER root
 
 # Install software for PyMVPA
 RUN apt-get update -qq \
@@ -23,7 +23,7 @@ RUN apt-get update -qq \
 # Update conda environment 'neuro'
 #---------------------------------
 
-#USER neuro
+USER neuro
 
 RUN conda install -y -q --name python=2.7 neuro bokeh \
                                      holoviews \
@@ -42,7 +42,7 @@ RUN conda install -y -q --name python=2.7 neuro bokeh \
     && sync
 
 
-#USER neuro
+USER neuro
 
 RUN mkdir -p ~/.jupyter && echo c.NotebookApp.ip = \"0.0.0.0\" > ~/.jupyter/jupyter_notebook_config.py
 
