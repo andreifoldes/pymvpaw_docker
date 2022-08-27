@@ -32,9 +32,8 @@ RUN conda install -y -q --name python=2.7 neuro bokeh \
                                      vtk \
     && sync && conda clean -tipsy && sync \
     && bash -c "source activate neuro \
-    && pip install  --no-cache-dir nitime \
-                                   nibabel \
-                                   nilearn==0.5.0a \
+    && pip install  --no-cache-dir nibabel \
+                                   nilearn \
                                    pymvpa2 \
                                    tensorflow \
                                    keras \
